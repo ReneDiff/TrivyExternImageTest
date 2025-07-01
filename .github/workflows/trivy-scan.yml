@@ -38,12 +38,13 @@ jobs:
       #    image-ref: 'localbuild/trivyapptest:latest' # denne del er fra gammelt setup hvor jeg scanner den app jeg selv dockerizer
       #    format: 'sarif'
           format: 'table'
+          vex: 'openvex.json'
       #    output: 'trivy-results.sarif'
       #    exit-code: '1'
       #    ignore-unfixed: false 
       #    vuln-type: 'os,library' 
       #    severity: 'CRITICAL,HIGH,LOW,MEDIUM' 
-          trivy-config: 'trivy.yaml'
+      #    trivy-config: 'trivy.yaml'
         
       #- name: Upload Trivy scan results to GitHub Security tab
       #  if (indsæt ":" her) always()
