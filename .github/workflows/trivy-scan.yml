@@ -31,7 +31,7 @@ jobs:
 
       - name: Run Trivy vulnerability scanner # and generate SARIF report
       # anvender master herunder, for øvelsens simple natur. I reelt miljø vil jeg anvende fastlåst version som ex. 0.24.0
-        uses: aquasecurity/trivy-action@master 
+        uses: aquasecurity/trivy-action@0.24.0
         with:
           scan-type: 'image'
           image-ref: 'docker.redpanda.com/redpandadata/console:v2.8.5'
