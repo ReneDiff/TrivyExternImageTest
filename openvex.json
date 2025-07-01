@@ -14,7 +14,8 @@
         {
             "vulnerability": { "name": "CVE-2025-0913" },
             "products": [ { "@id": "pkg:golang/stdlib@v1.23.7" } ],
-            "status": "fixed"
+            "status": "not_affected",
+            "justification": "code_not_reachable"
         }
     ]
 }
