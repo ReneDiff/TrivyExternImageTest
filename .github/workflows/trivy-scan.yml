@@ -20,6 +20,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+    # Jeg bygger i denne version ikke selv en dockerfile
     #  - name: Build an image from Dockerfile
     #    id: build-image 
     #    uses: docker/build-push-action@v5
@@ -33,7 +34,8 @@ jobs:
         uses: aquasecurity/trivy-action@master 
         with:
           scan-type: 'image'
-          image-ref: 'localbuild/trivyapptest:latest' 
+          image-ref: 'docker.redpanda.com/redpandadata/console:v2.8.5'
+      #    image-ref: 'localbuild/trivyapptest:latest' # denne del er fra gammelt setup hvor jeg scanner den app jeg selv dockerizer
       #    format: 'sarif'
           format: 'table'
       #    output: 'trivy-results.sarif'
