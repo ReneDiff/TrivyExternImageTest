@@ -32,6 +32,12 @@ jobs:
         run: |
           trivy image --show-suppressed --vex ./openvex.json docker.redpanda.com/redpandadata/console:v2.8.5
 
+      - name: Run Diagnostic Trivy Scan in JSON format
+        run: |
+          trivy image \
+            --format json \
+            docker.redpanda.com/redpandadata/console:v2.8.5
+
       #- name: Upload Trivy scan results to GitHub Security tab
       #  if (indsæt ":" her) always()
       #  uses: github/codeql-action/upload-sarif@v3
