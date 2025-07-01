@@ -1,0 +1,53 @@
+name: Build and Scan with Trivy
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build_and_scan:
+    name: Build, Scan and report
+    runs-on: ubuntu-latest
+
+    permissions:
+      security-events: write
+      contents: read
+      actions: read
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+    #  - name: Build an image from Dockerfile
+    #    id: build-image 
+    #    uses: docker/build-push-action@v5
+    #    with:
+    #      context: . 
+    #      load: true 
+    #      tags: localbuild/trivyapptest:latest 
+
+      - name: Run Trivy vulnerability scanner # and generate SARIF report
+      # anvender master herunder, for øvelsens simple natur. I reelt miljø vil jeg anvende fastlåst version som ex. 0.24.0
+        uses: aquasecurity/trivy-action@master 
+        with:
+          scan-type: 'image'
+          image-ref: 'localbuild/trivyapptest:latest' 
+      #    format: 'sarif'
+          format: 'table'
+          vex: 'openvex.json'
+      #    output: 'trivy-results.sarif'
+      #    exit-code: '1'
+      #    ignore-unfixed: false 
+      #    vuln-type: 'os,library' 
+      #    severity: 'CRITICAL,HIGH,LOW,MEDIUM' 
+      #    trivy-config: 'trivy.yaml'
+        
+      #- name: Upload Trivy scan results to GitHub Security tab
+      #  if (indsæt ":" her) always()
+      #  uses: github/codeql-action/upload-sarif@v3
+      #  with:
+      #    sarif_file: 'trivy-results.sarif'
+
+# Change
