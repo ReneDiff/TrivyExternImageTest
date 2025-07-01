@@ -36,7 +36,6 @@ jobs:
           image-ref: 'localbuild/trivyapptest:latest' 
       #    format: 'sarif'
           format: 'table'
-          vex: 'openvex.json'
       #    output: 'trivy-results.sarif'
       #    exit-code: '1'
       #    ignore-unfixed: false 
