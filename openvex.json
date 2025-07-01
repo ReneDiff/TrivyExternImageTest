@@ -12,8 +12,8 @@
             "justification": "code_not_reachable"
         },
         {
-            "vulnerability": { "name": "CVE-2025-0913" },
-            "products": [ { "@id": "pkg:golang/stdlib@v1.23.7" } ],
+            "vulnerability": { "name": "CVE-2025-22872" },
+            "products": [ { "@id": "pkg:golang/golang.org/x/net@v0.37.0" } ],
             "status": "not_affected",
             "justification": "code_not_reachable"
         }
