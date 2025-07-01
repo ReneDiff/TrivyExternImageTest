@@ -20,20 +20,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-    # Jeg bygger i denne version ikke selv en dockerfile
-    #  - name: Build an image from Dockerfile
-    #    id: build-image 
-    #    uses: docker/build-push-action@v5
-    #    with:
-    #      context: . 
-    #      load: true 
-    #      tags: localbuild/trivyapptest:latest 
-
-      - name: Install trivy # and generate SARIF report
-      # anvender master herunder, for øvelsens simple natur. I reelt miljø vil jeg anvende fastlåst version som ex. 0.24.0
-        uses: aquasecurity/trivy-action@0.24.0
+      - name: Install trivy 
+        uses: aquasecurity/trivy-action@master
         with:
           install-only: true
+          version: 'latest'
 
       - name: Run trivy scan
         run: |
