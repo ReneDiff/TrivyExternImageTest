@@ -38,7 +38,8 @@ jobs:
       #    image-ref: 'localbuild/trivyapptest:latest' # denne del er fra gammelt setup hvor jeg scanner den app jeg selv dockerizer
       #    format: 'sarif'
           format: 'table'
-          vex: 'openvex.json'
+          args: '--vex openvex.json --show-suppressed'
+      #    vex: 'openvex.json'
       #    output: 'trivy-results.sarif'
       #    exit-code: '1'
       #    ignore-unfixed: false 
