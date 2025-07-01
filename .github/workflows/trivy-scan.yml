@@ -30,7 +30,7 @@ jobs:
 
       - name: Run trivy scan
         run: |
-          trivy image --show-supressed --vex ./openvex.json docker.redpanda.com/redpandadata/console:v2.8.5
+          trivy image --show-suppressed --vex ./openvex.json docker.redpanda.com/redpandadata/console:v2.8.5
 
       #- name: Upload Trivy scan results to GitHub Security tab
       #  if (indsæt ":" her) always()
