@@ -30,7 +30,7 @@ jobs:
 
       - name: Run trivy scan
         run: |
-          trivy image --show-suppressed --vex ./openvex.json docker.redpanda.com/redpandadata/console:v2.8.5
+          trivy image --show-suppressed --vex ./openvex.json --exit-code 1 --severity HIGH,CRITICAL docker.redpanda.com/redpandadata/console:v2.8.5
 
       - name: Run Diagnostic Trivy Scan in JSON format
         run: |
