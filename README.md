@@ -1,6 +1,6 @@
 # Trivy CI/CD Pipeline med VEX og .trivyignore
 
-Dette repository er et Proof-of-Concept (PoC), der demonstrerer, hvordan man opsætter en automatiseret DevSecOps-pipeline ved hjælp af GitHub Actions og Trivy. Pipelinen scanner et container-image for sårbarheder og anvender både VEX (Vulnerability Exploitability eXchange) og `.trivyignore` til at håndtere og undertrykke fund.
+Dette repository er et Proof-of-Concept (PoC), der tester, hvordan man opsætter en automatiseret DevSecOps-pipeline ved hjælp af GitHub Actions og Trivy. Pipelinen scanner et container-image for sårbarheder og anvender både VEX (Vulnerability Exploitability eXchange) og `.trivyignore` til at håndtere og undertrykke fund.
 
 Det primære image, der scannes, er `docker.redpanda.com/redpandadata/console:v2.8.5`, som i forvejen har specifikke CVE'er, som jeg kender til. 
 
